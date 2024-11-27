@@ -1,6 +1,6 @@
 <template>
-    <header class="p-0 m-0" style="background-color: #1A5319;">
-        <nav class="navbar navbar-dark navbar-expand-lg pt-lg-2">
+    <header class="p-0 m-0 fixed-top" style="background-color: rgba(0, 0, 0, 0.05); backdrop-filter: blur(2px);">
+        <nav class="navbar navbar-dark navbar-expand-lg pt-lg-3">
             <div class="container">
                 <RouterLink class="navbar-brand fw-medium" to="/" style="font-size: 1.07rem;">
                     <img src="@/assets/logo.svg" style="height: 30px;" alt="">
@@ -18,20 +18,22 @@
                             <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Subject
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-dark text-center text-lg-start" style="background-color: #1A5319; top: 115% !important; font-size: 0.8rem !important;">
+                            <ul class="dropdown-menu dropdown-menu-dark text-center text-lg-start" style="background-color: rgba(0, 0, 0, 0.05); top: 115% !important; font-size: 0.8rem !important;">
+                                <li><RouterLink class="dropdown-item" to="#">Calistung</RouterLink></li>
                                 <li><RouterLink class="dropdown-item" to="#">Math</RouterLink></li>
                                 <li><RouterLink class="dropdown-item" to="#">English</RouterLink></li>
                                 <li><RouterLink class="dropdown-item" to="#">Korean</RouterLink></li>
                                 <li><RouterLink class="dropdown-item" to="#">Computer</RouterLink></li>
                                 <li><RouterLink class="dropdown-item" to="#">Piano</RouterLink></li>
                                 <li><RouterLink class="dropdown-item" to="#">Guitar</RouterLink></li>
+                                <li><RouterLink class="dropdown-item" to="#">Vocal</RouterLink></li>
                                 <li><RouterLink class="dropdown-item" to="#">Violin</RouterLink></li>
                                 <li><RouterLink class="dropdown-item" to="#">Taekwondo</RouterLink></li>
                                 <li><RouterLink class="dropdown-item" to="#">Football</RouterLink></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <RouterLink class="nav-link active" to="#">Teachers</RouterLink>
+                            <RouterLink class="nav-link active" to="/teachers">Teachers</RouterLink>
                         </li>
                         <li class="nav-item">
                             <RouterLink class="nav-link active" to="#">Gallery</RouterLink>
