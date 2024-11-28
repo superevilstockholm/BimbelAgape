@@ -1,5 +1,5 @@
 <template>
-    <header class="p-0 m-0 fixed-top" style="background-color: rgba(0, 0, 0, 0.05); backdrop-filter: blur(2px);">
+    <header class="p-0 m-0 fixed-top" style="background-color: rgba(0, 0, 0, 0.1); backdrop-filter: blur(2px);">
         <nav class="navbar navbar-dark navbar-expand-lg pt-lg-3">
             <div class="container">
                 <RouterLink class="navbar-brand fw-medium" to="/" style="font-size: 1.07rem;">
@@ -16,20 +16,10 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Subject
+                                Subjects
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark text-center text-lg-start" style="background-color: rgba(0, 0, 0, 0.05); top: 115% !important; font-size: 0.8rem !important;">
-                                <li><RouterLink class="dropdown-item" to="#">Calistung</RouterLink></li>
-                                <li><RouterLink class="dropdown-item" to="#">Math</RouterLink></li>
-                                <li><RouterLink class="dropdown-item" to="#">English</RouterLink></li>
-                                <li><RouterLink class="dropdown-item" to="#">Korean</RouterLink></li>
-                                <li><RouterLink class="dropdown-item" to="#">Computer</RouterLink></li>
-                                <li><RouterLink class="dropdown-item" to="#">Piano</RouterLink></li>
-                                <li><RouterLink class="dropdown-item" to="#">Guitar</RouterLink></li>
-                                <li><RouterLink class="dropdown-item" to="#">Vocal</RouterLink></li>
-                                <li><RouterLink class="dropdown-item" to="#">Violin</RouterLink></li>
-                                <li><RouterLink class="dropdown-item" to="#">Taekwondo</RouterLink></li>
-                                <li><RouterLink class="dropdown-item" to="#">Football</RouterLink></li>
+                                <li v-for="(subject, index) in subjects" v-bind:key="index"><RouterLink class="dropdown-item" :to="subject.url">{{ subject.name }}</RouterLink></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -68,3 +58,57 @@
     left: 0; 
 }
 </style>
+<script>
+export default {
+    data() {
+        return {
+            subjects: [
+                {
+                    'name': 'Calistung',
+                    'url': '/calistung'
+                },
+                {
+                    'name': 'Math',
+                    'url': '/math'
+                },
+                {
+                    'name': 'English',
+                    'url': '/english'
+                },
+                {
+                    'name': 'Korean',
+                    'url': '/korean'
+                },
+                {
+                    'name': 'Computer',
+                    'url': '/computer'
+                },
+                {
+                    'name': 'Piano',
+                    'url': '/piano'
+                },
+                {
+                    'name': 'Guitar',
+                    'url': '/guitar'
+                },
+                {
+                    'name': 'Vocal',
+                    'url': '/vocal'
+                },
+                {
+                    'name': 'Violin',
+                    'url': '/violin'
+                },
+                {
+                    'name': 'Taekwondo',
+                    'url': '/taekwondo'
+                },
+                {
+                    'name': 'Football',
+                    'url': '/football'
+                }
+            ]
+        }
+    }
+}
+</script>
