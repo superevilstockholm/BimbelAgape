@@ -1,6 +1,8 @@
 <template>
   <NavbarHeaderComponents/>
-  <router-view/>
+  <KeepAlive :include="['teachers']">
+    <router-view/>
+  </KeepAlive>
   <FooterComponent/>
 </template>
 <script>

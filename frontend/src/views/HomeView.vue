@@ -1,5 +1,9 @@
 <template>
-  <h1>halo dunia</h1>
+  <div class="container-fluid p-0 m-0">
+    <div class="container">
+      <h1>Halo Dunia</h1>
+    </div>
+  </div>
 </template>
 
 <script>

@@ -1,8 +1,8 @@
 <template>
-    <header class="p-0 m-0 fixed-top" style="background-color: rgba(0, 0, 0, 0.1); backdrop-filter: blur(2px);">
-        <nav class="navbar navbar-dark navbar-expand-lg pt-lg-3">
+    <header class="p-0 m-0 fixed-top" style="background-color: rgba(0, 0, 0, 0.3); backdrop-filter: blur(2px) brightness(80%);">
+        <nav class="navbar navbar-dark navbar-expand-lg pb-lg-1 mb-lg-0 pt-lg-2">
             <div class="container">
-                <RouterLink class="navbar-brand fw-medium" to="/" style="font-size: 1.07rem;">
+                <RouterLink class="navbar-brand fw-semibold" to="/" style="font-size: 1.07rem;">
                     <img src="@/assets/logo.svg" style="height: 30px;" alt="">
                     Bimbel Agape
                 </RouterLink>
@@ -10,23 +10,23 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto me-0 gap-lg-4 fw-normal text-center" style="font-family: 'Inter', Helvetica, sans-serif, serif; font-size: 0.8rem;">
+                    <ul class="navbar-nav ms-auto me-0 gap-lg-4 fw-medium text-center" style="font-family: 'Inter', Helvetica, sans-serif, serif; font-size: 0.85rem;">
                         <li class="nav-item">
-                            <RouterLink class="nav-link active" aria-current="page" to="/">Home</RouterLink>
+                            <RouterLink class="nav-link" :class="{ active: $route.path === '/' }" aria-current="page" to="/">Home</RouterLink>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Subjects
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-dark text-center text-lg-start" style="background-color: rgba(0, 0, 0, 0.05); top: 115% !important; font-size: 0.8rem !important;">
+                            <ul class="dropdown-menu dropdown-menu-dark text-center text-lg-start" style="background-color: rgba(0, 0, 0, 0.4); top: 115% !important; font-size: 0.8rem !important; backdrop-filter: blur(2px) brightness(80%) !important;">
                                 <li v-for="(subject, index) in subjects" v-bind:key="index"><RouterLink class="dropdown-item" :to="subject.url">{{ subject.name }}</RouterLink></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <RouterLink class="nav-link active" to="/teachers">Teachers</RouterLink>
+                            <RouterLink class="nav-link" :class="{ active: $route.path === '/teachers' }" to="/teachers">Teachers</RouterLink>
                         </li>
                         <li class="nav-item">
-                            <RouterLink class="nav-link active" to="#">Gallery</RouterLink>
+                            <RouterLink class="nav-link" :class="{ active: $route.path === '/gallery' }" to="#">Gallery</RouterLink>
                         </li>
                     </ul>
                 </div>
@@ -35,27 +35,26 @@
     </header>
 </template>
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
+.nav-item, .dropdown-item {
+    font-family: 'Inter', Helvetica, sans-serif, serif !important;
+}
 .nav-item {
     display: inline-block;
     position: relative;
 }
-.nav-item::after {    
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
+.nav-item:after {
     content: "";
-    display: block;
-    height: 1px;
-    left: 50%;
     position: absolute;
-    background: #fff;
-    transition: width 0.25s ease 0s, left 0.25s ease 0s;
+    bottom: 0;
+    left: 50%;
     width: 0;
+    height: 1.5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: width 250ms ease, left 250ms ease;
 }
-.nav-item:hover::after { 
-    width: 100%; 
-    left: 0; 
+.nav-item:hover:after {
+    width: 100%;
+    left: 0;
 }
 </style>
 <script>
