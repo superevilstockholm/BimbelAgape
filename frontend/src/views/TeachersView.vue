@@ -293,7 +293,7 @@ export default {
     methods: {
         async l() {
             await axios.get(
-                'http://38.22.104.156:1170/api/l',
+                'https://8437-38-22-104-156.ngrok-free.app/api/l',
                 {
                     headers: {
                         "ngrok-skip-browser-warning": "69420"
@@ -304,7 +304,7 @@ export default {
         // Get all teachers data
         async getTeachersViewPageData() {
             await axios.get(
-                'http://38.22.104.156:1170/api/getTeachersViewPageData',
+                'https://8437-38-22-104-156.ngrok-free.app/api/getTeachersViewPageData',
                 {
                     headers: {
                         "ngrok-skip-browser-warning": "69420"
