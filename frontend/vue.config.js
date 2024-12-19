@@ -15,9 +15,11 @@
       proxy: {
       '/l': {
         target: 'http://38.22.104.156:1170/api',
+        changeOrigin: true
       },
       '/getTeachersViewPageData': {
         target: 'http:38.22.104.156:1170/api',
+        changeOrigin: true
       },
     }
   }
